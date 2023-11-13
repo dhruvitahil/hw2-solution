@@ -15,3 +15,8 @@ You should be able to view the GUI of the project upon successful compilation.
 
 ## Java Version
 This code is compiled with ```openjdk 17.0.7 2023-04-18```. Please update your JDK accordingly if you face any incompatibility issue.
+
+Undo Functionality
+
+The user can now remove transactions from the expense tracker using the undo button, the undo button will be allowed to be used only if there is a transaction in the list, if there are no transactions in the table the undo button will be disabled.
+The undo button gets enabled when a transaction is added to the list and the user can select the transaction from multiple transactions in the table and click on the undo button to remove that particular transaction from the list.
