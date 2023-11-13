@@ -3,11 +3,13 @@ package model;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import view.ExpenseTrackerView;
 
 public class ExpenseTrackerModel {
 
   //encapsulation - data integrity
   private List<Transaction> transactions;
+  private ExpenseTrackerView view;
 
   public ExpenseTrackerModel() {
     transactions = new ArrayList<>(); 
@@ -22,7 +24,7 @@ public class ExpenseTrackerModel {
   }
 
   public void removeTransaction(Transaction t) {
-    transactions.remove(t);
+    transactions.remove(t); 
   }
 
   public List<Transaction> getTransactions() {

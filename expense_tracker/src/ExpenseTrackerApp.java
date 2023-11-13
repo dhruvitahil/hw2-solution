@@ -68,6 +68,11 @@ public class ExpenseTrackerApp {
     view.toFront();
    }});
     
+    view.getUndoBtn().addActionListener(e -> {
+        int selectedRowNumber = view.getTransactionsTable().getSelectedRow();
+        System.out.println(selectedRowNumber);
+        controller.removeSelectedTransaction(selectedRowNumber);
+    });
 
   }
 }

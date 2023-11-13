@@ -47,9 +47,28 @@ public class ExpenseTrackerController {
     
     Transaction t = new Transaction(amount, category);
     model.addTransaction(t);
+    
     view.getTableModel().addRow(new Object[]{t.getAmount(), t.getCategory(), t.getTimestamp()});
+    
+    List<Transaction> transactions = model.getTransactions();
+    view.updateUndoButtonState(transactions);
+    
     refresh();
     return true;
+  }
+
+  public boolean removeSelectedTransaction(int selectedRowNumber) {
+    List<Transaction> transactions = model.getTransactions();
+    if (selectedRowNumber >= 0 && selectedRowNumber < transactions.size()) {
+        Transaction selectedTransaction = transactions.get(selectedRowNumber);
+        model.removeTransaction(selectedTransaction);
+        transactions = model.getTransactions();
+        view.updateUndoButtonState(transactions);
+        refresh();
+        return true;
+    }
+    else
+      return false;
   }
 
   public void applyFilter() {
