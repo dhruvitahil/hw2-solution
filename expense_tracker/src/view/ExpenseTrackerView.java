@@ -14,7 +14,7 @@ import java.util.List;
 
 public class ExpenseTrackerView extends JFrame {
 
-  private JTable transactionsTable;
+  public JTable transactionsTable;
   private JButton addTransactionBtn;
   private JFormattedTextField amountField;
   private JTextField categoryField;

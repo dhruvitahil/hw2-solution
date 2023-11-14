@@ -41,7 +41,7 @@ public class ExpenseTrackerController {
     if (!InputValidation.isValidAmount(amount)) {
       return false;
     }
-    if (!InputValidation.isValidCategory(category)) {
+    else if (!InputValidation.isValidCategory(category)) {
       return false;
     }
     
